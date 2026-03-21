@@ -39,7 +39,7 @@ export default function Header() {
             alt="株式会社DJTS"
             width={150}
             height={0}
-            style={{ width: 140, height: 'auto' }}
+            style={{ width: 170, height: 'auto' }}
             priority
           />
         </Link>
