@@ -5,10 +5,10 @@ import Link from 'next/link'
 import Image from 'next/image'
 
 const navLinks = [
-  { href: '/services', label: 'SERVICE' },
-  { href: '/blog',     label: 'BLOG' },
-  { href: '/about',    label: 'ABOUT' },
-  { href: '/contact',  label: 'CONTACT' },
+  { href: '/services', label: 'SERVICE',  sub: 'サービス' },
+  { href: '/blog',     label: 'BLOG',     sub: 'ブログ' },
+  { href: '/about',    label: 'ABOUT',    sub: '会社概要' },
+  { href: '/contact',  label: 'CONTACT',  sub: 'お問い合わせ' },
 ]
 
 export default function Header() {
@@ -37,20 +37,22 @@ export default function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-xs font-bold tracking-[0.2em] text-tesla-gray hover:text-tesla-dark transition-colors"
+              className="flex flex-col items-center gap-0.5 text-tesla-gray hover:text-tesla-dark transition-colors"
               style={{ fontFamily: "'Helvetica Neue', Arial, sans-serif" }}
             >
-              {link.label}
+              <span className="text-xs font-bold tracking-[0.2em]">{link.label}</span>
+              <span className="text-[9px] font-normal tracking-wide" style={{ fontFamily: "'Noto Sans JP', sans-serif" }}>{link.sub}</span>
             </Link>
           ))}
 
           {/* CTA */}
           <Link
             href="/contact"
-            className="text-xs font-bold tracking-[0.15em] px-5 py-2 border border-tesla-dark text-tesla-dark hover:bg-tesla-dark hover:text-white transition-colors"
+            className="flex flex-col items-center gap-0.5 px-5 py-2 border border-tesla-dark text-tesla-dark hover:bg-tesla-dark hover:text-white transition-colors"
             style={{ fontFamily: "'Helvetica Neue', Arial, sans-serif" }}
           >
-            FREE CONSULT
+            <span className="text-xs font-bold tracking-[0.15em]">FREE CONSULT</span>
+            <span className="text-[9px] font-normal tracking-wide" style={{ fontFamily: "'Noto Sans JP', sans-serif" }}>無料相談</span>
           </Link>
         </nav>
 
