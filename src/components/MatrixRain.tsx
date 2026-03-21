@@ -2,9 +2,7 @@
 
 import { useEffect, useRef } from 'react'
 
-// 映画マトリックスで使われるカタカナ・数字・記号・DJTS
-const CHARS =
-  'DJTS012345789ｦｧｨｩｪｫｬｭｮｯｰｱｲｳｴｵｶｷｸｹｺｻｼｽｾｿﾀﾁﾂﾃﾄﾅﾆﾇﾈﾉﾊﾋﾌﾍﾎﾏﾐﾑﾒﾓﾔﾕﾖﾗﾘﾙﾚﾛﾜﾝ'
+const CHARS = 'DJTS'
 
 export default function MatrixRain() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
