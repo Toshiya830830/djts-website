@@ -5,10 +5,10 @@ import Link from 'next/link'
 import Image from 'next/image'
 
 const navLinks = [
-  { href: '/services', label: 'サービス' },
-  { href: '/blog', label: 'ブログ' },
-  { href: '/about', label: '会社概要' },
-  { href: '/contact', label: 'お問い合わせ' },
+  { href: '/services', label: 'SERVICE' },
+  { href: '/blog',     label: 'BLOG' },
+  { href: '/about',    label: 'ABOUT' },
+  { href: '/contact',  label: 'CONTACT' },
 ]
 
 export default function Header() {
@@ -21,49 +21,57 @@ export default function Header() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  // Hero is dark → white text; after scroll → dark text on white bg
   const isDark = !scrolled && !menuOpen
 
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-300 ${
-        menuOpen ? 'bg-white' : scrolled ? 'bg-white shadow-sm' : 'bg-transparent'
+        menuOpen || scrolled ? 'bg-white' : 'bg-transparent'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
-        <Link href="/" className="flex items-center">
+      {/* メインバー */}
+      <div className="max-w-7xl mx-auto px-8 flex items-center justify-between h-16">
+
+        {/* ロゴ */}
+        <Link href="/" className="flex items-center shrink-0">
           <Image
             src="/images/logo.svg"
             alt="株式会社DJTS"
             width={150}
             height={0}
-            style={{ width: 150, height: 'auto' }}
+            style={{ width: 140, height: 'auto' }}
             priority
           />
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden md:flex items-center gap-10" aria-label="グローバルナビゲーション">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className={`text-sm tracking-wide transition-colors ${
-                isDark ? 'text-white/80 hover:text-white' : 'text-tesla-mid hover:text-tesla-dark'
+              className={`text-xs font-bold tracking-[0.2em] transition-colors ${
+                isDark
+                  ? 'text-white/70 hover:text-white'
+                  : 'text-tesla-mid hover:text-tesla-dark'
               }`}
+              style={{ fontFamily: "'Helvetica Neue', Arial, sans-serif" }}
             >
               {link.label}
             </Link>
           ))}
+
+          {/* CTA */}
           <Link
             href="/contact"
-            className={`text-sm font-medium px-5 py-2 rounded-full transition-colors ${
+            className={`text-xs font-bold tracking-[0.15em] px-5 py-2 border transition-colors ${
               isDark
-                ? 'bg-white text-tesla-dark hover:bg-white/90'
-                : 'bg-tesla-dark text-white hover:bg-tesla-gray'
+                ? 'border-white/40 text-white hover:bg-white hover:text-tesla-dark'
+                : 'border-tesla-dark text-tesla-dark hover:bg-tesla-dark hover:text-white'
             }`}
+            style={{ fontFamily: "'Helvetica Neue', Arial, sans-serif" }}
           >
-            無料相談
+            FREE CONSULT
           </Link>
         </nav>
 
@@ -74,7 +82,7 @@ export default function Header() {
           aria-label="メニュー"
           aria-expanded={menuOpen}
         >
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             {menuOpen ? (
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M6 18L18 6M6 6l12 12" />
             ) : (
@@ -84,26 +92,35 @@ export default function Header() {
         </button>
       </div>
 
+      {/* 下部区切り線 */}
+      <div className={`h-px transition-colors duration-300 ${
+        isDark ? 'bg-white/15' : 'bg-tesla-border'
+      }`} />
+
       {/* Mobile menu */}
       {menuOpen && (
-        <div className="md:hidden bg-white border-t border-tesla-border px-6 py-6 space-y-4">
+        <div className="md:hidden bg-white px-8 py-6 space-y-1">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="block text-tesla-mid hover:text-tesla-dark text-sm py-2 tracking-wide"
+              className="block text-xs font-bold tracking-[0.2em] text-tesla-mid hover:text-tesla-dark py-3 border-b border-tesla-border/50 transition-colors"
+              style={{ fontFamily: "'Helvetica Neue', Arial, sans-serif" }}
               onClick={() => setMenuOpen(false)}
             >
               {link.label}
             </Link>
           ))}
-          <Link
-            href="/contact"
-            className="block text-center bg-tesla-dark text-white text-sm font-medium px-5 py-3 rounded-full hover:bg-tesla-gray transition-colors mt-2"
-            onClick={() => setMenuOpen(false)}
-          >
-            無料相談
-          </Link>
+          <div className="pt-4">
+            <Link
+              href="/contact"
+              className="block text-center text-xs font-bold tracking-[0.15em] border border-tesla-dark text-tesla-dark px-5 py-3 hover:bg-tesla-dark hover:text-white transition-colors"
+              style={{ fontFamily: "'Helvetica Neue', Arial, sans-serif" }}
+              onClick={() => setMenuOpen(false)}
+            >
+              FREE CONSULT
+            </Link>
+          </div>
         </div>
       )}
     </header>
