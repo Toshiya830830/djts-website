@@ -1,60 +1,71 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80" fill="none">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 60" fill="none">
   <defs>
-    <!-- ゴールドグラデーション -->
+    <!-- キラキラゴールドグラデーション -->
     <linearGradient id="gold" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%"   stop-color="#F5E6A3"/>
-      <stop offset="35%"  stop-color="#D4A843"/>
-      <stop offset="65%"  stop-color="#C8962E"/>
-      <stop offset="100%" stop-color="#E8C060"/>
+      <stop offset="0%"   stop-color="#FFF5C0"/>
+      <stop offset="20%"  stop-color="#FFD700"/>
+      <stop offset="45%"  stop-color="#B8860B"/>
+      <stop offset="60%"  stop-color="#FFD700"/>
+      <stop offset="80%"  stop-color="#DAA520"/>
+      <stop offset="100%" stop-color="#FFF0A0"/>
     </linearGradient>
 
-    <!-- アクセントライン用グラデーション -->
+    <!-- 左右フェードライン -->
     <linearGradient id="goldLine" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%"   stop-color="#C8962E" stop-opacity="0"/>
-      <stop offset="30%"  stop-color="#D4A843"/>
-      <stop offset="70%"  stop-color="#D4A843"/>
-      <stop offset="100%" stop-color="#C8962E" stop-opacity="0"/>
+      <stop offset="0%"   stop-color="#FFD700" stop-opacity="0"/>
+      <stop offset="30%"  stop-color="#FFD700" stop-opacity="0.8"/>
+      <stop offset="70%"  stop-color="#FFD700" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#FFD700" stop-opacity="0"/>
     </linearGradient>
 
-    <!-- テキストシャドウ用フィルター -->
-    <filter id="glow" x="-10%" y="-10%" width="120%" height="120%">
-      <feGaussianBlur stdDeviation="1.5" result="blur"/>
+    <!-- キラキラグロウ -->
+    <filter id="glow" x="-15%" y="-30%" width="130%" height="160%">
+      <feGaussianBlur stdDeviation="3" result="blur1"/>
+      <feGaussianBlur stdDeviation="1" result="blur2"/>
       <feMerge>
-        <feMergeNode in="blur"/>
+        <feMergeNode in="blur1"/>
+        <feMergeNode in="blur2"/>
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
+
+    <!-- ハイライト用クリップ -->
+    <linearGradient id="shine" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%"   stop-color="white" stop-opacity="0"/>
+      <stop offset="40%"  stop-color="white" stop-opacity="0.25"/>
+      <stop offset="60%"  stop-color="white" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="white" stop-opacity="0"/>
+    </linearGradient>
   </defs>
 
   <!-- 上部装飾ライン -->
-  <line x1="20" y1="18" x2="300" y2="18"
-        stroke="url(#goldLine)" stroke-width="0.6" opacity="0.6"/>
+  <line x1="10" y1="10" x2="290" y2="10"
+        stroke="url(#goldLine)" stroke-width="0.7"/>
 
-  <!-- メインロゴテキスト -->
+  <!-- メインロゴ（グロウ） -->
   <text
-    x="160" y="55"
+    x="150" y="46"
     text-anchor="middle"
     font-family="'Helvetica Neue', 'Arial', sans-serif"
-    font-size="42"
-    font-weight="700"
-    letter-spacing="14"
+    font-size="44"
+    font-weight="800"
+    letter-spacing="16"
     fill="url(#gold)"
     filter="url(#glow)"
   >DJTS</text>
 
-  <!-- サブテキスト -->
+  <!-- ハイライトレイヤー（光沢感） -->
   <text
-    x="160" y="70"
+    x="150" y="46"
     text-anchor="middle"
     font-family="'Helvetica Neue', 'Arial', sans-serif"
-    font-size="8"
-    font-weight="300"
-    letter-spacing="6"
-    fill="#D4A843"
-    opacity="0.75"
-  >WEB MARKETING</text>
+    font-size="44"
+    font-weight="800"
+    letter-spacing="16"
+    fill="url(#shine)"
+  >DJTS</text>
 
   <!-- 下部装飾ライン -->
-  <line x1="20" y1="76" x2="300" y2="76"
-        stroke="url(#goldLine)" stroke-width="0.6" opacity="0.6"/>
+  <line x1="10" y1="56" x2="290" y2="56"
+        stroke="url(#goldLine)" stroke-width="0.7"/>
 </svg>
