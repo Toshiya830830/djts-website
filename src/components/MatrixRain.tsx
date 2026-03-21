@@ -13,7 +13,7 @@ export default function MatrixRain() {
     const ctx = canvas.getContext('2d')
     if (!ctx) return
 
-    const FONT_SIZE = 16
+    const FONT_SIZE = 22
     const INTERVAL = 80 // ms（約12fps）
 
     type Drop = {
