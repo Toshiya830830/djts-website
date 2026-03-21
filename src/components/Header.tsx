@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 
 const navLinks = [
   { href: '/services', label: 'サービス' },
@@ -30,11 +31,14 @@ export default function Header() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
-        <Link
-          href="/"
-          className={`font-bold text-xl tracking-widest transition-colors ${isDark ? 'text-white' : 'text-tesla-dark'}`}
-        >
-          DJTS
+        <Link href="/" className="flex items-center">
+          <Image
+            src="/images/logo.svg"
+            alt="株式会社DJTS"
+            width={120}
+            height={30}
+            priority
+          />
         </Link>
 
         {/* Desktop nav */}
