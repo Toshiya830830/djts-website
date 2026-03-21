@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import MatrixRain from '@/components/MatrixRain'
 
 export const metadata: Metadata = {
   title: '株式会社DJTS | WEBマーケティングで成果を出す',
@@ -94,6 +95,10 @@ export default function Home() {
 
       {/* Hero */}
       <section className="relative h-screen flex flex-col items-center justify-center bg-tesla-dark overflow-hidden">
+        {/* Matrix Rain background */}
+        <MatrixRain />
+        {/* Overlay to soften the rain and keep text readable */}
+        <div className="absolute inset-0 bg-tesla-dark/60 z-[1]" />
         <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
           <h1 className="text-5xl sm:text-7xl font-bold tracking-tight text-white leading-tight mb-6">
             デジタルで、<br />ビジネスを加速する。
@@ -110,7 +115,7 @@ export default function Home() {
             </Link>
           </div>
         </div>
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-tesla-silver/40">
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-tesla-silver/40 z-10">
           <svg className="w-4 h-4 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 9l-7 7-7-7" />
           </svg>
