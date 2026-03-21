@@ -14,7 +14,7 @@ export default function MatrixRain() {
     const FONT_SIZE = 18
     const CHARS = ['D', 'J', 'T', 'S']
     let drops: number[] = []
-    let animId: number
+    let animId: ReturnType<typeof setInterval>
 
     const init = () => {
       canvas.width = canvas.offsetWidth
@@ -23,9 +23,12 @@ export default function MatrixRain() {
       drops = Array.from({ length: cols }, () => Math.random() * -50)
     }
 
+    // 約8fps（120ms間隔）で文字が読めるスピードに
+    const INTERVAL = 120
+
     const draw = () => {
       // フェードアウト用：背景色で薄く塗りつぶす
-      ctx.fillStyle = 'rgba(23, 26, 32, 0.06)'
+      ctx.fillStyle = 'rgba(23, 26, 32, 0.15)'
       ctx.fillRect(0, 0, canvas.width, canvas.height)
 
       ctx.font = `${FONT_SIZE}px "Courier New", monospace`
@@ -47,24 +50,22 @@ export default function MatrixRain() {
         if (y > canvas.height && Math.random() > 0.97) {
           drops[i] = 0
         }
-        drops[i] += 0.5
+        drops[i] += 1
       }
-
-      animId = requestAnimationFrame(draw)
     }
 
     init()
-    animId = requestAnimationFrame(draw)
+    animId = setInterval(draw, INTERVAL)
 
     const onResize = () => {
-      cancelAnimationFrame(animId)
+      clearInterval(animId)
       init()
-      animId = requestAnimationFrame(draw)
+      animId = setInterval(draw, INTERVAL)
     }
     window.addEventListener('resize', onResize)
 
     return () => {
-      cancelAnimationFrame(animId)
+      clearInterval(animId)
       window.removeEventListener('resize', onResize)
     }
   }, [])
