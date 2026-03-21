@@ -31,7 +31,7 @@ const companyInfo = [
   { label: '英語名', value: 'DJTS Inc.' },
   { label: '設立', value: '2026年3月11日' },
   { label: '事業内容', value: 'WEBマーケティング事業（SEO対策・Web広告運用・SNSマーケティング・コンテンツマーケティング）' },
-  { label: '所在地', value: '日本' },
+  { label: '所在地', value: '北海道札幌市豊平区平岸1条10丁目1番5-403' },
 ]
 
 export default function AboutPage() {
