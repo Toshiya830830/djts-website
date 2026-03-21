@@ -2,6 +2,10 @@
 
 import { useEffect, useRef } from 'react'
 
+// 映画マトリックスで使われるカタカナ・数字・記号・DJTS
+const CHARS =
+  'DJTS012345789ｦｧｨｩｪｫｬｭｮｯｰｱｲｳｴｵｶｷｸｹｺｻｼｽｾｿﾀﾁﾂﾃﾄﾅﾆﾇﾈﾉﾊﾋﾌﾍﾎﾏﾐﾑﾒﾓﾔﾕﾖﾗﾘﾙﾚﾛﾜﾝ'
+
 export default function MatrixRain() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
 
@@ -11,46 +15,68 @@ export default function MatrixRain() {
     const ctx = canvas.getContext('2d')
     if (!ctx) return
 
-    const FONT_SIZE = 18
-    const CHARS = ['D', 'J', 'T', 'S']
-    let drops: number[] = []
+    const FONT_SIZE = 16
+    const INTERVAL = 80 // ms（約12fps）
+
+    type Drop = {
+      y: number       // 現在のy位置（行数）
+      speed: number   // 列ごとのスピード差
+      length: number  // トレイルの長さ
+    }
+
+    let drops: Drop[] = []
     let animId: ReturnType<typeof setInterval>
 
     const init = () => {
       canvas.width = canvas.offsetWidth
       canvas.height = canvas.offsetHeight
       const cols = Math.floor(canvas.width / FONT_SIZE)
-      drops = Array.from({ length: cols }, () => Math.random() * -50)
+      drops = Array.from({ length: cols }, () => ({
+        y: Math.random() * -(canvas.height / FONT_SIZE),
+        speed: 0.4 + Math.random() * 0.6,   // 列ごとに速度を変える
+        length: 8 + Math.floor(Math.random() * 16), // トレイルの長さ
+      }))
     }
 
-    // 約8fps（120ms間隔）で文字が読めるスピードに
-    const INTERVAL = 120
-
     const draw = () => {
-      // フェードアウト用：背景色で薄く塗りつぶす
-      ctx.fillStyle = 'rgba(23, 26, 32, 0.15)'
+      // 純黒で薄く塗りつぶす（残像効果）
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.18)'
       ctx.fillRect(0, 0, canvas.width, canvas.height)
 
-      ctx.font = `${FONT_SIZE}px "Courier New", monospace`
-
       for (let i = 0; i < drops.length; i++) {
-        const char = CHARS[Math.floor(Math.random() * CHARS.length)]
+        const { y, speed, length } = drops[i]
         const x = i * FONT_SIZE
-        const y = drops[i] * FONT_SIZE
 
-        // 先頭の文字は明るく、後続はやや暗く
-        const isFront = drops[i] > 0 && drops[i] * FONT_SIZE < canvas.height
-        ctx.fillStyle = isFront
-          ? 'rgba(0, 230, 80, 0.85)'
-          : 'rgba(0, 180, 60, 0.4)'
-
-        ctx.fillText(char, x, y)
-
-        // 画面下端を超えたらランダムなタイミングでリセット
-        if (y > canvas.height && Math.random() > 0.97) {
-          drops[i] = 0
+        // トレイル（後続文字）を長さ分描画
+        for (let j = 1; j <= length; j++) {
+          const ty = (y - j) * FONT_SIZE
+          if (ty < 0) continue
+          const char = CHARS[Math.floor(Math.random() * CHARS.length)]
+          // 先端から離れるほど暗く
+          const alpha = (1 - j / length) * 0.8
+          ctx.fillStyle = `rgba(0, 255, 65, ${alpha})`
+          ctx.font = `${FONT_SIZE}px monospace`
+          ctx.fillText(char, x, ty)
         }
-        drops[i] += 1
+
+        // 先頭文字は白く輝く
+        const headY = y * FONT_SIZE
+        if (headY > 0 && headY < canvas.height) {
+          const headChar = CHARS[Math.floor(Math.random() * CHARS.length)]
+          ctx.fillStyle = '#ffffff'
+          ctx.font = `bold ${FONT_SIZE}px monospace`
+          ctx.fillText(headChar, x, headY)
+        }
+
+        // 移動
+        drops[i].y += speed
+
+        // 画面下端を超えたらリセット
+        if (drops[i].y * FONT_SIZE > canvas.height && Math.random() > 0.96) {
+          drops[i].y = Math.random() * -20
+          drops[i].speed = 0.4 + Math.random() * 0.6
+          drops[i].length = 8 + Math.floor(Math.random() * 16)
+        }
       }
     }
 

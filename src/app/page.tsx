@@ -94,11 +94,11 @@ export default function Home() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
 
       {/* Hero */}
-      <section className="relative h-screen flex flex-col items-center justify-center bg-tesla-dark overflow-hidden">
+      <section className="relative h-screen flex flex-col items-center justify-center bg-black overflow-hidden">
         {/* Matrix Rain background */}
         <MatrixRain />
         {/* Overlay to soften the rain and keep text readable */}
-        <div className="absolute inset-0 bg-tesla-dark/60 z-[1]" />
+        <div className="absolute inset-0 bg-black/55 z-[1]" />
         <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
           <h1 className="text-5xl sm:text-7xl font-bold tracking-tight text-white leading-tight mb-6">
             デジタルで、<br />ビジネスを加速する。
