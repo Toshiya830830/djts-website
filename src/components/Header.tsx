@@ -35,10 +35,10 @@ export default function Header() {
         {/* ロゴ */}
         <Link href="/" className="flex items-center shrink-0">
           <Image
-            src="/images/logo.svg"
+            src="/images/logo.png"
             alt="株式会社DJTS"
-            width={150}
-            height={0}
+            width={320}
+            height={60}
             style={{ width: 170, height: 'auto' }}
             priority
           />
