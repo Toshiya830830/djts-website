@@ -1,6 +1,38 @@
 # 株式会社DJTS 企業サイト
 
-Next.js 14 + Tailwind CSS で構築した企業サイトです。
+Next.js 14 + Tailwind CSS + TypeScript で構築した企業サイトです。
+
+## 作業ログ（2026-03-21）
+
+### 実施内容
+
+- **Next.js 14 + Tailwind CSS + TypeScript** で企業サイトを新規構築
+- **Tesla風ダークテーマUI** を採用（`#171a20` ベース、白黒交互セクション）
+- **ページ構成**：トップ / サービス / ブログ / 会社概要 / お問い合わせ
+- **ブログ機能**：Markdownファイルベースの記事管理（`content/posts/`）、サムネイルは `public/images/posts/` に配置
+- **SEO対策**：メタタグ / OGP / JSON-LD構造化データ / sitemap.xml / robots.txt / パンくずリスト / FAQスキーマ / GA4 / Search Console
+
+### リポジトリ・デプロイ情報
+
+| 項目 | URL |
+|---|---|
+| GitHubリポジトリ | https://github.com/Toshiya830830/djts-website |
+| Vercel（本番） | https://djts-website.vercel.app |
+| 独自ドメイン | https://djts.co.jp（DNS反映待ち） |
+
+### 今後の更新方法
+
+記事やコードを変更したら以下のコマンドを実行するだけで自動デプロイされます。
+
+```bash
+git add .
+git commit -m "変更内容のメモ"
+git push
+```
+
+Vercelが `main` ブランチへのプッシュを検知し、自動でビルド・デプロイします。
+
+---
 
 ## 開発サーバーの起動
 
