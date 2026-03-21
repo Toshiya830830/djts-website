@@ -35,8 +35,9 @@ export default function Header() {
           <Image
             src="/images/logo.svg"
             alt="株式会社DJTS"
-            width={120}
-            height={30}
+            width={150}
+            height={0}
+            style={{ width: 150, height: 'auto' }}
             priority
           />
         </Link>
