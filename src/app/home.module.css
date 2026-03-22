@@ -497,7 +497,7 @@
 /* ── WHY ── */
 .why {
   background: var(--black);
-  padding: 80px 40px;
+  padding: 80px 40px 40px;
 }
 
 .whyGrid {
@@ -616,20 +616,21 @@
 
 .footerLogo {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 22px;
+  font-size: 36px;
   font-weight: 600;
   letter-spacing: 0.18em;
   color: var(--gold);
   text-decoration: none;
+  flex-shrink: 0;
 }
 
 .footerCopy {
   font-family: 'DM Mono', monospace;
   font-size: 10px;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.03em;
   color: var(--gray);
   margin: 0;
-  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 /* ── RESPONSIVE ── */
