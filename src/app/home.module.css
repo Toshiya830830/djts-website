@@ -418,12 +418,13 @@
 
 .servicesGrid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   gap: 2px;
   background: rgba(0, 0, 0, 0.08);
 }
 
 .serviceCard {
+  grid-column: span 2;
   background: var(--off-white);
   padding: 52px 48px;
   position: relative;
@@ -431,6 +432,8 @@
   transition: background 0.4s;
   cursor: default;
 }
+
+.serviceCard:nth-last-child(-n+2) { grid-column: span 3; }
 
 .serviceCard::before {
   content: '';
@@ -654,6 +657,7 @@
   .services { padding: 80px 24px; }
   .sectionHeader { margin-bottom: 48px; }
   .servicesGrid { grid-template-columns: 1fr; }
+  .serviceCard { grid-column: span 1 !important; }
   .serviceCard { padding: 28px 20px; }
   .serviceNum { font-size: 44px; top: 16px; right: 20px; }
   .serviceIcon { font-size: 22px; margin-bottom: 12px; }
