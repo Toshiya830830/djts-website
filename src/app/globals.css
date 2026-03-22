@@ -48,8 +48,3 @@ body {
 .anim-4 { opacity: 0; animation: fadeUp 0.9s ease forwards 0.8s; }
 .anim-5 { opacity: 0; animation: fadeUp 1s ease forwards 1.2s; }
 
-/* ── Service card last row centering ── */
-@media (min-width: 769px) {
-  .svc-4th { grid-column: 2; }
-  .svc-5th { grid-column: 3; }
-}
