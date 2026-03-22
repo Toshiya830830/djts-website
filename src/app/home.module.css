@@ -497,7 +497,7 @@
 /* ── WHY ── */
 .why {
   background: var(--black);
-  padding: 80px 40px 16px;
+  padding: 52px 40px 16px;
 }
 
 .whyGrid {
@@ -607,17 +607,22 @@
 /* ── FOOTER ── */
 .footer {
   background: #050505;
-  padding: 36px 80px;
+  border-top: 1px solid var(--border);
+}
+
+.footerInner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 36px 60px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 40px;
-  border-top: 1px solid var(--border);
 }
 
 .footerLogo {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 36px;
+  font-size: 46px;
   font-weight: 600;
   letter-spacing: 0.18em;
   color: var(--gold);
@@ -661,5 +666,5 @@
   .ctaBanner { padding: 80px 24px; }
   .ctaWatermark { font-size: 120px; }
 
-  .footer { flex-direction: column; gap: 16px; text-align: center; padding: 32px 24px; }
+  .footerInner { flex-direction: column; gap: 16px; text-align: center; padding: 32px 24px; }
 }
