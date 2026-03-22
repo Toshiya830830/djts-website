@@ -2,7 +2,7 @@
 title: "SNSマーケティング戦略の立て方【2026年最新版】"
 date: "2026-03-05"
 excerpt: "Instagram・X・TikTokを活用したSNSマーケティング戦略の立て方を、実際の事例をもとに解説します。"
-thumbnail: "/images/posts/sns-marketing.png"
+thumbnail: "/images/posts/sns-marketing.svg"
 tags: ["SNS", "Instagram", "TikTok", "戦略"]
 ---
 

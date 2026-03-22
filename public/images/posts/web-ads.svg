@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="500" viewBox="0 0 1200 500">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0A0A0A"/>
+      <stop offset="100%" style="stop-color:#0d0c06"/>
+    </linearGradient>
+    <linearGradient id="glow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#C9A84C;stop-opacity:0.15"/>
+      <stop offset="100%" style="stop-color:#C9A84C;stop-opacity:0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="500" fill="url(#bg)"/>
+
+  <!-- Grid -->
+  <g opacity="0.06" stroke="#C9A84C" stroke-width="1">
+    <line x1="0" y1="62.5" x2="1200" y2="62.5"/>
+    <line x1="0" y1="125" x2="1200" y2="125"/>
+    <line x1="0" y1="187.5" x2="1200" y2="187.5"/>
+    <line x1="0" y1="250" x2="1200" y2="250"/>
+    <line x1="0" y1="312.5" x2="1200" y2="312.5"/>
+    <line x1="0" y1="375" x2="1200" y2="375"/>
+    <line x1="0" y1="437.5" x2="1200" y2="437.5"/>
+    <line x1="100" y1="0" x2="100" y2="500"/>
+    <line x1="200" y1="0" x2="200" y2="500"/>
+    <line x1="300" y1="0" x2="300" y2="500"/>
+    <line x1="400" y1="0" x2="400" y2="500"/>
+    <line x1="500" y1="0" x2="500" y2="500"/>
+    <line x1="600" y1="0" x2="600" y2="500"/>
+    <line x1="700" y1="0" x2="700" y2="500"/>
+    <line x1="800" y1="0" x2="800" y2="500"/>
+    <line x1="900" y1="0" x2="900" y2="500"/>
+    <line x1="1000" y1="0" x2="1000" y2="500"/>
+    <line x1="1100" y1="0" x2="1100" y2="500"/>
+  </g>
+
+  <circle cx="840" cy="250" r="300" fill="url(#glow)"/>
+  <rect x="80" y="0" width="1" height="500" fill="#C9A84C" opacity="0.25"/>
+
+  <!-- Rising chart icon -->
+  <g transform="translate(790, 140)">
+    <!-- Chart frame -->
+    <rect x="-90" y="-80" width="220" height="180" rx="4" fill="none" stroke="#C9A84C" stroke-width="1" opacity="0.2"/>
+    <!-- Chart bars -->
+    <rect x="-60" y="20" width="30" height="60" fill="#C9A84C" opacity="0.3"/>
+    <rect x="-18" y="-10" width="30" height="90" fill="#C9A84C" opacity="0.5"/>
+    <rect x="24" y="-40" width="30" height="120" fill="#C9A84C" opacity="0.7"/>
+    <rect x="66" y="-70" width="30" height="150" fill="#C9A84C" opacity="0.95"/>
+    <!-- Trend line -->
+    <polyline points="-45,40 -3,0 39,-30 81,-60" fill="none" stroke="#C9A84C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- Arrow -->
+    <polygon points="81,-60 95,-72 75,-75" fill="#C9A84C"/>
+    <!-- ROI label -->
+    <text x="-60" y="-92" font-family="monospace" font-size="14" letter-spacing="3" fill="#C9A84C" opacity="0.9">ROI MAX</text>
+  </g>
+
+  <text x="140" y="178" font-family="'DM Mono', monospace, sans-serif" font-size="13" letter-spacing="4" fill="#C9A84C" opacity="0.9">WEB ADVERTISING</text>
+  <rect x="140" y="192" width="32" height="1" fill="#C9A84C"/>
+
+  <text x="140" y="268" font-family="sans-serif" font-size="56" font-weight="700" fill="#F5F3EE" letter-spacing="-1">Web広告 ROI</text>
+  <text x="140" y="338" font-family="sans-serif" font-size="56" font-weight="700" fill="#F5F3EE" letter-spacing="-1">最大化の方法</text>
+
+  <rect x="140" y="384" width="126" height="28" fill="none" stroke="#C9A84C" stroke-width="1" opacity="0.6"/>
+  <text x="153" y="403" font-family="sans-serif" font-size="11" letter-spacing="2" fill="#C9A84C" opacity="0.8">Google / Meta広告</text>
+
+  <text x="1060" y="476" font-family="serif" font-size="13" letter-spacing="3" fill="#C9A84C" opacity="0.4">DJTS</text>
+</svg>

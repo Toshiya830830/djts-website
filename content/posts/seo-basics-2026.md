@@ -2,7 +2,7 @@
 title: "2026年版 SEO対策の基本と最新トレンド"
 date: "2026-03-15"
 excerpt: "Googleのアルゴリズム変動が続く中、今押さえておくべきSEOの基本と2026年の最新トレンドを解説します。"
-thumbnail: "/images/posts/seo-basics.png"
+thumbnail: "/images/posts/seo-basics.svg"
 tags: ["SEO", "コンテンツ", "Google"]
 ---
 

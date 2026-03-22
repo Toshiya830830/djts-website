@@ -2,7 +2,7 @@
 title: "Web広告のROIを最大化する5つの方法"
 date: "2026-03-10"
 excerpt: "Google広告・Meta広告を運用する上で、費用対効果を最大化するための実践的な5つの手法を紹介します。"
-thumbnail: "/images/posts/web-ads.png"
+thumbnail: "/images/posts/web-ads.svg"
 tags: ["Web広告", "Google広告", "ROI"]
 ---
 
