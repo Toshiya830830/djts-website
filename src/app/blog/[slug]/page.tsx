@@ -3,18 +3,19 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { getAllSlugs, getPostBySlug } from '@/lib/posts'
 
-type Props = { params: { slug: string } }
+type Props = { params: Promise<{ slug: string }> }
 
 export async function generateStaticParams() {
   return getAllSlugs().map((slug) => ({ slug }))
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const post = await getPostBySlug(params.slug)
+  const { slug } = await params
+  const post = await getPostBySlug(slug)
   return {
     title: post.title,
     description: post.excerpt,
-    alternates: { canonical: `https://djts.co.jp/blog/${params.slug}/` },
+    alternates: { canonical: `https://djts.co.jp/blog/${slug}/` },
     openGraph: {
       title: post.title,
       description: post.excerpt,
@@ -26,7 +27,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function BlogPostPage({ params }: Props) {
-  const post = await getPostBySlug(params.slug)
+  const { slug } = await params
+  const post = await getPostBySlug(slug)
 
   const articleJsonLd = {
     '@context': 'https://schema.org',
@@ -50,7 +52,7 @@ export default async function BlogPostPage({ params }: Props) {
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'ホーム', item: 'https://djts.co.jp/' },
       { '@type': 'ListItem', position: 2, name: 'ブログ', item: 'https://djts.co.jp/blog/' },
-      { '@type': 'ListItem', position: 3, name: post.title, item: `https://djts.co.jp/blog/${params.slug}/` },
+      { '@type': 'ListItem', position: 3, name: post.title, item: `https://djts.co.jp/blog/${slug}/` },
     ],
   }
 
