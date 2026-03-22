@@ -29,6 +29,7 @@ const organizationJsonLd = {
 const companyInfo = [
   { label: '会社名', value: '株式会社DJTS' },
   { label: '英語名', value: 'DJTS Inc.' },
+  { label: '代表者', value: '代表取締役　道順敏也' },
   { label: '設立', value: '2026年3月11日' },
   { label: '事業内容', value: 'WEBマーケティング事業（SEO対策・Web広告運用・SNSマーケティング・コンテンツマーケティング）' },
   { label: '所在地', value: '北海道札幌市豊平区平岸1条10丁目1番5-403' },
