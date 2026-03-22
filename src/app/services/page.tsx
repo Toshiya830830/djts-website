@@ -4,7 +4,7 @@ import Link from 'next/link'
 export const metadata: Metadata = {
   title: 'サービス',
   description:
-    '株式会社DJTSのWEBマーケティングサービス一覧。SEO対策・Web広告運用・SNSマーケティング・コンテンツマーケティングを提供しています。',
+    '株式会社DJTSのWEBマーケティングサービス一覧。SEO対策・Web広告運用・SNSマーケティング・コンテンツマーケティング・動画編集・WEBサイト制作を提供しています。',
   alternates: { canonical: 'https://djts.co.jp/services/' },
 }
 
@@ -81,6 +81,22 @@ const services = [
     features: ['コンテンツ戦略立案', 'SEO記事制作', 'ホワイトペーパー作成', 'メルマガ運用', 'コンテンツ効果測定', 'リライト・改善'],
     dark: true,
   },
+  {
+    id: 'video',
+    title: '動画編集',
+    subtitle: 'ブランドの世界観を映像で表現し、エンゲージメントを高める',
+    desc: 'YouTube・SNS・広告用の動画をプロが編集。ブランドの世界観を映像で表現し、エンゲージメントを高めます。視聴者の心を動かすストーリーテリングで、認知拡大から購買促進まで幅広く対応します。',
+    features: ['YouTube動画編集', 'SNS向けショート動画', 'Web広告用動画制作', 'テロップ・字幕制作', 'BGM・SE選定', 'サムネイルデザイン'],
+    dark: false,
+  },
+  {
+    id: 'web',
+    title: 'WEBサイト制作',
+    subtitle: 'SEOを意識した設計・デザイン・実装で集客につながるサイトを',
+    desc: 'SEOを意識した設計・デザイン・実装で、集客につながるWEBサイトを制作します。コーポレートサイト・ランディングページ・ECサイトまで、ビジネス目標から逆算した制作を行います。',
+    features: ['コーポレートサイト制作', 'LP（ランディングページ）制作', 'SEO設計・実装', 'レスポンシブデザイン', 'CMS導入・設定', '公開後の保守・改善'],
+    dark: true,
+  },
 ]
 
 export default function ServicesPage() {
@@ -101,7 +117,7 @@ export default function ServicesPage() {
         </nav>
         <h1 className="text-5xl sm:text-7xl font-bold text-white tracking-tight mb-6">サービス</h1>
         <p className="text-tesla-silver text-lg font-light max-w-xl">
-          4つのサービスを組み合わせた統合WEBマーケティングで、企業の成長を加速します。
+          6つのサービスを組み合わせた統合WEBマーケティングで、企業の成長を加速します。
         </p>
       </section>
 
