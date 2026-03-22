@@ -14,28 +14,24 @@
   --border: rgba(201, 168, 76, 0.2);
 }
 
-@layer base {
-  html {
-    scroll-behavior: smooth;
-  }
-  body {
-    background: var(--black);
-    color: var(--off-white);
-    font-family: 'Noto Sans JP', sans-serif;
-    font-weight: 300;
-    overflow-x: hidden;
-  }
+*, *::before, *::after {
+  box-sizing: border-box;
 }
 
-@layer utilities {
-  .font-cormorant {
-    font-family: 'Cormorant Garamond', serif;
-  }
-  .font-mono-dm {
-    font-family: 'DM Mono', monospace;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 300;
+  background: var(--black);
+  color: var(--off-white);
+  overflow-x: hidden;
+  margin: 0;
+}
+
+/* ── Animations (global, used by home page) ── */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(24px); }
   to   { opacity: 1; transform: translateY(0); }
@@ -46,14 +42,13 @@
   50%       { opacity: 1; }
 }
 
-.animate-fade-up-1 { opacity: 0; animation: fadeUp 0.8s ease forwards 0.2s; }
-.animate-fade-up-2 { opacity: 0; animation: fadeUp 0.9s ease forwards 0.4s; }
-.animate-fade-up-3 { opacity: 0; animation: fadeUp 0.9s ease forwards 0.6s; }
-.animate-fade-up-4 { opacity: 0; animation: fadeUp 0.9s ease forwards 0.8s; }
-.animate-fade-up-5 { opacity: 0; animation: fadeUp 1s ease forwards 1.2s; }
+.anim-1 { opacity: 0; animation: fadeUp 0.8s ease forwards 0.2s; }
+.anim-2 { opacity: 0; animation: fadeUp 0.9s ease forwards 0.4s; }
+.anim-3 { opacity: 0; animation: fadeUp 0.9s ease forwards 0.6s; }
+.anim-4 { opacity: 0; animation: fadeUp 0.9s ease forwards 0.8s; }
+.anim-5 { opacity: 0; animation: fadeUp 1s ease forwards 1.2s; }
 
-@media (min-width: 768px) {
-  [data-center="true"] {
-    grid-column: 2;
-  }
+/* ── Global service card 5th centering ── */
+@media (min-width: 769px) {
+  .svc-last { grid-column: 2; }
 }
