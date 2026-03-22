@@ -287,7 +287,7 @@
   color: rgba(245, 243, 238, 0.6);
   line-height: 1.8;
   margin-bottom: 52px;
-  max-width: 440px;
+  max-width: 660px;
 }
 
 .heroActions {
@@ -497,7 +497,7 @@
 /* ── WHY ── */
 .why {
   background: var(--black);
-  padding: 80px 40px 40px;
+  padding: 80px 40px 16px;
 }
 
 .whyGrid {
@@ -607,10 +607,11 @@
 /* ── FOOTER ── */
 .footer {
   background: #050505;
-  padding: 40px;
+  padding: 36px 80px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 40px;
   border-top: 1px solid var(--border);
 }
 
@@ -630,7 +631,6 @@
   letter-spacing: 0.03em;
   color: var(--gray);
   margin: 0;
-  flex-shrink: 0;
 }
 
 /* ── RESPONSIVE ── */
@@ -661,5 +661,5 @@
   .ctaBanner { padding: 80px 24px; }
   .ctaWatermark { font-size: 120px; }
 
-  .footer { flex-direction: column; gap: 16px; text-align: center; }
+  .footer { flex-direction: column; gap: 16px; text-align: center; padding: 32px 24px; }
 }
