@@ -2,106 +2,157 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
 
 const navLinks = [
-  { href: '/services', label: 'SERVICE',  sub: 'サービス' },
-  { href: '/blog',     label: 'BLOG',     sub: 'ブログ' },
-  { href: '/about',    label: 'ABOUT',    sub: '会社概要' },
-  { href: '/contact',  label: 'CONTACT',  sub: 'お問い合わせ' },
+  { href: '/services', label: 'Service',  sub: 'サービス' },
+  { href: '/blog',     label: 'Blog',     sub: 'ブログ' },
+  { href: '/about',    label: 'About',    sub: '会社概要' },
+  { href: '/contact',  label: 'Contact',  sub: 'お問い合わせ' },
 ]
 
 export default function Header() {
-  const [menuOpen, setMenuOpen] = useState(false)
+  const [open, setOpen] = useState(false)
+
+  const close = () => setOpen(false)
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white">
-      {/* メインバー */}
-      <div className="max-w-7xl mx-auto px-8 flex items-center justify-between h-16">
-
-        {/* ロゴ */}
-        <Link href="/" className="flex items-center shrink-0">
-          <Image
-            src="/images/logo.png"
-            alt="株式会社DJTS"
-            width={320}
-            height={60}
-            style={{ width: 170, height: 'auto' }}
-            priority
-          />
+    <>
+      <header
+        className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-10 h-[72px]"
+        style={{
+          background: 'rgba(10,10,10,0.85)',
+          backdropFilter: 'blur(12px)',
+          borderBottom: '1px solid var(--border)',
+        }}
+      >
+        {/* Logo */}
+        <Link
+          href="/"
+          className="font-cormorant text-[28px] font-semibold tracking-[0.18em] no-underline"
+          style={{ color: 'var(--gold)' }}
+        >
+          DJTS
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden md:flex items-center gap-10" aria-label="グローバルナビゲーション">
+        <nav className="hidden md:flex items-center gap-9" aria-label="グローバルナビゲーション">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="flex flex-col items-center gap-0.5 text-tesla-gray hover:text-tesla-dark transition-colors"
-              style={{ fontFamily: "'Helvetica Neue', Arial, sans-serif" }}
+              className="flex flex-col items-center gap-0.5 no-underline transition-colors"
+              style={{ color: 'rgba(245,243,238,0.6)' }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--gold)')}
+              onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(245,243,238,0.6)')}
             >
-              <span className="text-xs font-bold tracking-[0.2em]">{link.label}</span>
-              <span className="text-[9px] font-normal tracking-wide" style={{ fontFamily: "'Noto Sans JP', sans-serif" }}>{link.sub}</span>
+              <span className="font-mono-dm text-[11px] tracking-[0.2em] uppercase">{link.label}</span>
+              <span className="font-sans text-[9px] tracking-wide font-normal">{link.sub}</span>
             </Link>
           ))}
 
           {/* CTA */}
           <Link
             href="/contact"
-            className="flex flex-col items-center gap-0.5 px-5 py-2 border border-tesla-dark text-tesla-dark hover:bg-tesla-dark hover:text-white transition-colors"
-            style={{ fontFamily: "'Helvetica Neue', Arial, sans-serif" }}
+            className="font-mono-dm text-[11px] tracking-[0.15em] uppercase px-6 py-2.5 no-underline transition-colors"
+            style={{ background: 'var(--gold)', color: 'var(--black)' }}
+            onMouseEnter={(e) => (e.currentTarget.style.background = 'var(--gold-light)')}
+            onMouseLeave={(e) => (e.currentTarget.style.background = 'var(--gold)')}
           >
-            <span className="text-xs font-bold tracking-[0.15em]">FREE CONSULT</span>
-            <span className="text-[9px] font-normal tracking-wide" style={{ fontFamily: "'Noto Sans JP', sans-serif" }}>無料相談</span>
+            無料相談
           </Link>
         </nav>
 
-        {/* Mobile button */}
+        {/* Hamburger */}
         <button
-          className="md:hidden p-2 text-tesla-dark"
-          onClick={() => setMenuOpen(!menuOpen)}
+          className="md:hidden flex flex-col justify-center items-center w-11 h-11 gap-[5px] rounded-[6px] transition-colors"
+          style={{
+            background: open ? 'rgba(201,168,76,0.15)' : 'rgba(255,255,255,0.08)',
+            border: '1px solid var(--border)',
+          }}
+          onClick={() => setOpen(!open)}
           aria-label="メニュー"
-          aria-expanded={menuOpen}
+          aria-expanded={open}
         >
-          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            {menuOpen ? (
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M6 18L18 6M6 6l12 12" />
-            ) : (
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 6h16M4 12h16M4 18h16" />
-            )}
-          </svg>
+          <span
+            className="block w-5 transition-all duration-300 origin-center"
+            style={{
+              height: '1.5px',
+              background: 'var(--off-white)',
+              transform: open ? 'translateY(6.5px) rotate(45deg)' : 'none',
+            }}
+          />
+          <span
+            className="block w-5 transition-all duration-300"
+            style={{
+              height: '1.5px',
+              background: 'var(--off-white)',
+              opacity: open ? 0 : 1,
+              transform: open ? 'scaleX(0)' : 'none',
+            }}
+          />
+          <span
+            className="block w-5 transition-all duration-300 origin-center"
+            style={{
+              height: '1.5px',
+              background: 'var(--off-white)',
+              transform: open ? 'translateY(-6.5px) rotate(-45deg)' : 'none',
+            }}
+          />
         </button>
-      </div>
+      </header>
 
-      {/* 下部区切り線 */}
-      <div className="h-px bg-tesla-border" />
+      {/* Drawer overlay */}
+      <div
+        className="fixed inset-0 z-40 transition-opacity duration-300 md:hidden"
+        style={{
+          background: 'rgba(0,0,0,0.6)',
+          opacity: open ? 1 : 0,
+          pointerEvents: open ? 'all' : 'none',
+        }}
+        onClick={close}
+      />
 
-      {/* Mobile menu */}
-      {menuOpen && (
-        <div className="md:hidden bg-white px-8 py-6 space-y-1">
+      {/* Drawer */}
+      <div
+        className="fixed top-0 right-0 bottom-0 z-50 flex flex-col pt-24 pb-10 px-10 md:hidden transition-transform duration-400"
+        style={{
+          width: 280,
+          background: '#0f0f0a',
+          borderLeft: '1px solid var(--border)',
+          transform: open ? 'translateX(0)' : 'translateX(100%)',
+          transition: 'transform 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+        }}
+      >
+        <ul className="list-none flex flex-col">
           {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="block text-xs font-bold tracking-[0.2em] text-tesla-gray hover:text-tesla-dark py-3 border-b border-tesla-border/50 transition-colors"
-              style={{ fontFamily: "'Helvetica Neue', Arial, sans-serif" }}
-              onClick={() => setMenuOpen(false)}
-            >
-              {link.label}
-            </Link>
+            <li key={link.href} style={{ borderBottom: '1px solid var(--border)' }}>
+              <Link
+                href={link.href}
+                onClick={close}
+                className="flex items-center justify-between py-5 no-underline transition-colors"
+                style={{ color: 'var(--off-white)' }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--gold)')}
+                onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--off-white)')}
+              >
+                <span className="text-[15px] font-medium">{link.label.toUpperCase()}</span>
+                <span className="font-mono-dm text-[9px] tracking-[0.2em] uppercase" style={{ color: 'var(--gold)' }}>
+                  {link.sub}
+                </span>
+              </Link>
+            </li>
           ))}
-          <div className="pt-4">
-            <Link
-              href="/contact"
-              className="block text-center text-xs font-bold tracking-[0.15em] border border-tesla-dark text-tesla-dark px-5 py-3 hover:bg-tesla-dark hover:text-white transition-colors"
-              style={{ fontFamily: "'Helvetica Neue', Arial, sans-serif" }}
-              onClick={() => setMenuOpen(false)}
-            >
-              FREE CONSULT
-            </Link>
-          </div>
-        </div>
-      )}
-    </header>
+        </ul>
+        <Link
+          href="/contact"
+          onClick={close}
+          className="mt-9 block text-center text-[13px] font-bold tracking-[0.1em] py-4 no-underline transition-colors"
+          style={{ background: 'var(--gold)', color: 'var(--black)' }}
+          onMouseEnter={(e) => (e.currentTarget.style.background = 'var(--gold-light)')}
+          onMouseLeave={(e) => (e.currentTarget.style.background = 'var(--gold)')}
+        >
+          FREE CONSULT　無料相談
+        </Link>
+      </div>
+    </>
   )
 }
