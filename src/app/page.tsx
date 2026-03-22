@@ -75,7 +75,7 @@ export default function Home() {
           </div>
 
           <h1 className={`${s.heroTitle} anim-2`}>
-            デジタルで、<br />
+            <span className={s.heroTitleLine}>デジタルで、</span>
             <span className={s.heroTitleLine2}>ビジネスを<em className={s.heroAccent}>加速</em>する。</span>
           </h1>
 
