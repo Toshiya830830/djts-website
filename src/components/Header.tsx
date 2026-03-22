@@ -24,7 +24,10 @@ export default function Header() {
         <ul className={s.navLinks}>
           {navLinks.map((link) => (
             <li key={link.href}>
-              <Link href={link.href}>{link.label}</Link>
+              <Link href={link.href}>
+                <span className={s.navLabelEn}>{link.label}</span>
+                <span className={s.navLabelJa}>{link.sub}</span>
+              </Link>
             </li>
           ))}
         </ul>

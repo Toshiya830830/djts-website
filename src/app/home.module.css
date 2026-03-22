@@ -32,15 +32,30 @@
 
 .navLinks a {
   font-family: 'DM Mono', monospace;
-  font-size: 11px;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
   color: rgba(245, 243, 238, 0.6);
   text-decoration: none;
   transition: color 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
 }
 
 .navLinks a:hover { color: var(--gold); }
+
+.navLabelEn {
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-family: 'DM Mono', monospace;
+}
+
+.navLabelJa {
+  font-size: 9px;
+  font-family: 'Noto Sans JP', sans-serif;
+  letter-spacing: 0.05em;
+  font-weight: 300;
+}
 
 .navCta {
   font-family: 'DM Mono', monospace;
@@ -241,9 +256,9 @@
 
 .heroTitle {
   font-family: 'Noto Sans JP', sans-serif;
-  font-size: clamp(48px, 7vw, 88px);
+  font-size: clamp(40px, 5.5vw, 76px);
   font-weight: 700;
-  line-height: 1.1;
+  line-height: 1.15;
   letter-spacing: -0.02em;
   margin-bottom: 28px;
   margin-top: 0;
@@ -471,7 +486,7 @@
 /* ── WHY ── */
 .why {
   background: var(--black);
-  padding: 120px 40px;
+  padding: 80px 40px;
 }
 
 .whyGrid {
@@ -479,7 +494,6 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 1px;
   background: var(--border);
-  margin-top: 64px;
 }
 
 .whyItem {
