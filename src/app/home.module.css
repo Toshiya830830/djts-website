@@ -287,7 +287,7 @@
   color: rgba(245, 243, 238, 0.6);
   line-height: 1.8;
   margin-bottom: 52px;
-  max-width: 660px;
+  max-width: none;
 }
 
 .heroActions {
@@ -497,7 +497,7 @@
 /* ── WHY ── */
 .why {
   background: var(--black);
-  padding: 52px 40px 16px;
+  padding: 24px 40px 16px;
 }
 
 .whyGrid {
