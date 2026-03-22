@@ -48,6 +48,8 @@ const services = [
   { num: '04', icon: '✍️', title: 'コンテンツマーケティング', desc: 'SEOと連動した質の高いコンテンツで、継続的なオーガニック集客を実現します。',              href: '/services#content' },
   { num: '05', icon: '🎬', title: '動画編集',               desc: 'YouTube・SNS・広告用の動画をプロが編集。ブランドの世界観を映像で表現し、エンゲージメントを高めます。', href: '/services#video' },
   { num: '06', icon: '🌐', title: 'WEBサイト制作',          desc: 'SEOを意識した設計・デザイン・実装で、集客につながるWEBサイトを制作します。',               href: '/services#web' },
+  { num: '07', icon: '⚙️', title: '業務効率化・DX支援',     desc: '業務プロセスのデジタル化・自動化により、コスト削減と生産性向上を実現します。クラウドツールの導入から運用まで一貫してサポートします。', href: '/services#dx' },
+  { num: '08', icon: '🤖', title: 'AIツール導入支援',       desc: 'ChatGPT・Claude・画像生成AIなど最新のAIツールを業務に活用。社員研修から運用定着まで支援し、業務効率を大幅に改善します。', href: '/services#ai' },
 ]
 
 const whyItems = [

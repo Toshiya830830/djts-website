@@ -97,6 +97,22 @@ const services = [
     features: ['コーポレートサイト制作', 'LP（ランディングページ）制作', 'SEO設計・実装', 'レスポンシブデザイン', 'CMS導入・設定', '公開後の保守・改善'],
     dark: true,
   },
+  {
+    id: 'dx',
+    title: '業務効率化・DX支援',
+    subtitle: 'デジタル化・自動化でコスト削減と生産性向上を実現',
+    desc: '業務プロセスのデジタル化・自動化により、コスト削減と生産性向上を実現します。クラウドツールの導入から運用まで一貫してサポートします。',
+    features: ['業務フロー分析・設計', 'クラウドツール選定・導入', 'RPA・自動化構築', 'ペーパーレス化支援', '社内マニュアル整備', '運用定着サポート'],
+    dark: false,
+  },
+  {
+    id: 'ai',
+    title: 'AIツール導入支援',
+    subtitle: '最新AIを業務に活かし、生産性を大幅に改善',
+    desc: 'ChatGPT・Claude・画像生成AIなど最新のAIツールを業務に活用。社員研修から運用定着まで支援し、業務効率を大幅に改善します。',
+    features: ['AIツール選定・導入', 'ChatGPT / Claude活用支援', '画像生成AI導入', 'プロンプト設計・研修', '業務ワークフロー組み込み', '効果測定・改善'],
+    dark: true,
+  },
 ]
 
 export default function ServicesPage() {
@@ -117,7 +133,7 @@ export default function ServicesPage() {
         </nav>
         <h1 className="text-5xl sm:text-7xl font-bold text-white tracking-tight mb-6">サービス</h1>
         <p className="text-tesla-silver text-lg font-light max-w-xl">
-          6つのサービスを組み合わせた統合WEBマーケティングで、企業の成長を加速します。
+          8つのサービスを組み合わせた統合WEBマーケティングで、企業の成長を加速します。
         </p>
       </section>
 
