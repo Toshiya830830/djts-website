@@ -42,14 +42,14 @@ const faqJsonLd = {
 }
 
 const services = [
-  { num: '01', icon: '🔍', title: 'SEO対策',               desc: '技術SEO・コンテンツSEO・被リンク獲得の3軸で、検索エンジンからの自然流入を継続的に増やします。', href: '/services#seo' },
-  { num: '02', icon: '📊', title: 'Web広告運用',            desc: 'Google広告・Meta広告を最適化し、無駄なコストを削減。ROIを最大化する運用を実現します。',      href: '/services#ads' },
-  { num: '03', icon: '📱', title: 'SNSマーケティング',       desc: 'Instagram・X・TikTokなどでブランド認知を高め、ファンを育て、売上につなげます。',            href: '/services#sns' },
-  { num: '04', icon: '✍️', title: 'コンテンツマーケティング', desc: 'SEOと連動した質の高いコンテンツで、継続的なオーガニック集客を実現します。',              href: '/services#content' },
-  { num: '05', icon: '🎬', title: '動画編集',               desc: 'YouTube・SNS・広告用の動画をプロが編集。ブランドの世界観を映像で表現し、エンゲージメントを高めます。', href: '/services#video' },
-  { num: '06', icon: '🌐', title: 'WEBサイト制作',          desc: 'SEOを意識した設計・デザイン・実装で、集客につながるWEBサイトを制作します。',               href: '/services#web' },
-  { num: '07', icon: '⚙️', title: '業務効率化・DX支援',     desc: '業務プロセスのデジタル化・自動化により、コスト削減と生産性向上を実現します。クラウドツールの導入から運用まで一貫してサポートします。', href: '/services#dx' },
-  { num: '08', icon: '🤖', title: 'AIツール導入支援',       desc: 'ChatGPT・Claude・画像生成AIなど最新のAIツールを業務に活用。社員研修から運用定着まで支援し、業務効率を大幅に改善します。', href: '/services#ai' },
+  { num: '01', title: 'SEO対策',               desc: '技術SEO・コンテンツSEO・被リンク獲得の3軸で、検索エンジンからの自然流入を継続的に増やします。', href: '/services#seo' },
+  { num: '02', title: 'Web広告運用',            desc: 'Google広告・Meta広告を最適化し、無駄なコストを削減。ROIを最大化する運用を実現します。',      href: '/services#ads' },
+  { num: '03', title: 'SNSマーケティング',       desc: 'Instagram・X・TikTokなどでブランド認知を高め、ファンを育て、売上につなげます。',            href: '/services#sns' },
+  { num: '04', title: 'コンテンツマーケティング', desc: 'SEOと連動した質の高いコンテンツで、継続的なオーガニック集客を実現します。',              href: '/services#content' },
+  { num: '05', title: '動画編集',               desc: 'YouTube・SNS・広告用の動画をプロが編集。ブランドの世界観を映像で表現し、エンゲージメントを高めます。', href: '/services#video' },
+  { num: '06', title: 'WEBサイト制作',          desc: 'SEOを意識した設計・デザイン・実装で、集客につながるWEBサイトを制作します。',               href: '/services#web' },
+  { num: '07', title: '業務効率化・DX支援',     desc: '業務プロセスのデジタル化・自動化により、コスト削減と生産性向上を実現します。クラウドツールの導入から運用まで一貫してサポートします。', href: '/services#dx' },
+  { num: '08', title: 'AIツール導入支援',       desc: 'ChatGPT・Claude・画像生成AIなど最新のAIツールを業務に活用。社員研修から運用定着まで支援し、業務効率を大幅に改善します。', href: '/services#ai' },
 ]
 
 const whyItems = [
@@ -116,7 +116,6 @@ export default function Home() {
           {services.map((sv) => (
             <div key={sv.num} className={s.serviceCard}>
               <div className={s.serviceNum}>{sv.num}</div>
-              <div className={s.serviceIcon}>{sv.icon}</div>
               <h3 className={s.serviceName}>{sv.title}</h3>
               <p className={s.serviceDesc}>{sv.desc}</p>
               <Link href={sv.href} className={s.serviceLink}>詳しく見る →</Link>
