@@ -21,21 +21,21 @@ const seoPlans = [
   {
     name: 'ライト',
     price: '¥50,000',
-    unit: '/月',
+    unit: '/月（税込）',
     features: ['キーワード5個', '月次レポート', '月1回MTG'],
     recommended: false,
   },
   {
     name: 'スタンダード',
     price: '¥100,000',
-    unit: '/月',
+    unit: '/月（税込）',
     features: ['キーワード15個', '月次レポート', '改善提案', '月2回MTG'],
     recommended: true,
   },
   {
     name: 'プロ',
     price: '¥200,000',
-    unit: '/月〜',
+    unit: '/月〜（税込）',
     features: ['キーワード無制限', '週次レポート', '戦略立案', '専任担当'],
     recommended: false,
   },
@@ -48,8 +48,8 @@ const otherServices = [
     subtitle: 'Google広告 / Meta広告',
     dark: true,
     items: [
-      { label: '運用手数料', value: '広告費の20%（最低月額 ¥30,000）' },
-      { label: '初期設定費', value: '¥50,000' },
+      { label: '運用手数料', value: '広告費の20%（最低月額 ¥30,000・税込）' },
+      { label: '初期設定費', value: '¥50,000（税込）' },
       { label: '広告費', value: '別途（実費）' },
     ],
     note: '※広告費は別途、実費をご負担いただきます。',
@@ -60,10 +60,10 @@ const otherServices = [
     subtitle: 'Instagram / X / TikTok など',
     dark: false,
     items: [
-      { label: '月額プラン', value: '¥50,000/月〜' },
+      { label: '月額プラン', value: '¥50,000/月〜（税込）' },
       { label: '含まれる内容', value: '投稿作成・アカウント運用・月次レポート' },
     ],
-    note: '※運用チャネル数・投稿頻度により異なります。詳細はお問い合わせください。',
+    note: '※運用チャネル数・投稿頻度により異なります。詳細はお問い合わせください。\n※最低契約期間：3ヶ月',
   },
   {
     id: 'content',
@@ -71,10 +71,10 @@ const otherServices = [
     subtitle: 'SEO記事制作・コンテンツ戦略',
     dark: true,
     items: [
-      { label: '記事単体制作', value: '¥20,000〜 / 1本' },
-      { label: '月額プラン', value: '¥50,000〜/月（4本/月・SEO最適化込み）' },
+      { label: '記事単体制作', value: '¥20,000〜（税込）/ 1本' },
+      { label: '月額プラン', value: '¥50,000〜/月（税込・4本/月・SEO最適化込み）' },
     ],
-    note: '※文字数・専門性・リサーチ範囲により変動します。',
+    note: '※文字数・専門性・リサーチ範囲により変動します。\n※最低契約期間：3ヶ月',
   },
   {
     id: 'web',
@@ -82,11 +82,75 @@ const otherServices = [
     subtitle: 'コーポレートサイト・LP制作',
     dark: false,
     items: [
-      { label: 'ランディングページ', value: '¥100,000〜' },
-      { label: 'コーポレートサイト（シンプル）', value: '¥200,000〜' },
-      { label: 'コーポレートサイト（カスタム）', value: '¥500,000〜' },
+      { label: 'ランディングページ', value: '¥100,000〜（税込）' },
+      { label: 'コーポレートサイト（シンプル）', value: '¥200,000〜（税込）' },
+      { label: 'コーポレートサイト（カスタム）', value: '¥500,000〜（税込）' },
     ],
     note: '※保守・運用費は別途お見積もりいたします。',
+  },
+  {
+    id: 'video',
+    title: '動画編集',
+    subtitle: 'YouTube / SNS / Web広告',
+    dark: true,
+    items: [
+      { label: '料金', value: '要お問い合わせ' },
+      { label: '内容', value: 'YouTube・SNS・広告用動画の企画〜編集' },
+    ],
+    note: '※案件の規模・尺・内容により異なります。まずはご相談ください。',
+  },
+  {
+    id: 'dx',
+    title: '業務効率化・DX支援',
+    subtitle: 'デジタル化・自動化・クラウド導入',
+    dark: false,
+    items: [
+      { label: '料金', value: '要お問い合わせ' },
+      { label: '内容', value: '業務フロー分析・クラウドツール導入・RPA構築など' },
+    ],
+    note: '※業務内容・規模によって工数が異なります。まずはご相談ください。',
+  },
+  {
+    id: 'ai',
+    title: 'AIツール導入支援',
+    subtitle: 'ChatGPT / Claude / 画像生成AI',
+    dark: true,
+    items: [
+      { label: '料金', value: '要お問い合わせ' },
+      { label: '内容', value: 'ChatGPT・Claude・画像生成AIの導入〜社員研修まで' },
+    ],
+    note: '※導入ツール・研修規模により異なります。まずはご相談ください。',
+  },
+]
+
+const faqItems = [
+  {
+    q: 'SEO対策の効果が出るまでどのくらいかかりますか？',
+    a: '一般的に3〜6ヶ月が目安です。サイトの状態や競合状況によって異なりますが、継続的な施策により長期的な流入増加が期待できます。',
+  },
+  {
+    q: 'SEOのプランはどれを選べばいいですか？',
+    a: '初めての方はスタンダードプラン（¥100,000/月）がおすすめです。キーワード15個・月2回のMTGで本格的な対策が始められます。',
+  },
+  {
+    q: 'Web広告の最低予算はありますか？',
+    a: '広告費は月額10万円から対応しています。運用手数料は広告費の20%（最低¥30,000/月）です。業種や目標によって最適な予算をご提案しますので、まずはご相談ください。',
+  },
+  {
+    q: 'WEBサイト制作のシンプルとカスタムの違いは何ですか？',
+    a: 'シンプルプラン（¥200,000〜）はテンプレートをベースに短期間で制作します。カスタムプラン（¥500,000〜）はゼロからオリジナルデザインで制作し、機能や演出も自由に設計できます。',
+  },
+  {
+    q: '動画編集・DX支援・AIツール導入支援の料金はなぜ「要お問い合わせ」なのですか？',
+    a: 'これらのサービスは案件の規模・内容によって工数が大きく異なるため、一律の料金設定が難しい状況です。まずはご要望をお聞きしたうえで、最適なプランをご提案します。',
+  },
+  {
+    q: '複数のサービスをまとめて依頼できますか？',
+    a: 'はい、SEO・広告・SNS・コンテンツマーケティングを組み合わせた統合プランもご用意しています。まとめてご依頼いただくと、施策間の連携が強化されより高い効果が期待できます。',
+  },
+  {
+    q: '契約期間の縛りはありますか？',
+    a: '月額サービスは最低3ヶ月からのご契約をお願いしています。SEOや広告運用は効果が出るまで一定期間が必要なためです。詳細はお問い合わせください。',
   },
 ]
 
@@ -165,6 +229,7 @@ export default function PricingPage() {
               </div>
             ))}
           </div>
+          <p className="mt-4 text-xs font-light text-tesla-mid">※最低契約期間：3ヶ月</p>
         </div>
       </section>
 
@@ -198,9 +263,11 @@ export default function PricingPage() {
             </div>
 
             {svc.note && (
-              <p className={`mt-4 text-xs font-light ${svc.dark ? 'text-tesla-silver/50' : 'text-tesla-mid'}`}>
-                {svc.note}
-              </p>
+              <div className={`mt-4 text-xs font-light space-y-1 ${svc.dark ? 'text-tesla-silver/50' : 'text-tesla-mid'}`}>
+                {svc.note.split('\n').map((line) => (
+                  <p key={line}>{line}</p>
+                ))}
+              </div>
             )}
 
             <div className="mt-10">
@@ -227,36 +294,7 @@ export default function PricingPage() {
         <div className="max-w-3xl mx-auto">
           <h2 className="text-3xl font-bold text-tesla-dark text-center mb-12 tracking-tight">よくある質問</h2>
           <div className="divide-y divide-tesla-border border border-tesla-border rounded-2xl bg-white overflow-hidden">
-            {[
-              {
-                q: 'SEO対策の効果が出るまでどのくらいかかりますか？',
-                a: '一般的に3〜6ヶ月が目安です。サイトの状態や競合状況によって異なりますが、継続的な施策により長期的な流入増加が期待できます。',
-              },
-              {
-                q: 'SEOのプランはどれを選べばいいですか？',
-                a: '初めての方はスタンダードプラン（¥100,000/月）がおすすめです。キーワード15個・月2回のMTGで本格的な対策が始められます。',
-              },
-              {
-                q: 'Web広告の最低予算はありますか？',
-                a: '広告費は月額10万円から対応しています。運用手数料は広告費の20%（最低¥30,000/月）です。業種や目標によって最適な予算をご提案しますので、まずはご相談ください。',
-              },
-              {
-                q: 'WEBサイト制作のシンプルとカスタムの違いは何ですか？',
-                a: 'シンプルプラン（¥200,000〜）はテンプレートをベースに短期間で制作します。カスタムプラン（¥500,000〜）はゼロからオリジナルデザインで制作し、機能や演出も自由に設計できます。',
-              },
-              {
-                q: '動画編集・DX支援・AIツール導入支援の料金はなぜ「要お問い合わせ」なのですか？',
-                a: 'これらのサービスは案件の規模・内容によって工数が大きく異なるため、一律の料金設定が難しい状況です。まずはご要望をお聞きしたうえで、最適なプランをご提案します。',
-              },
-              {
-                q: '複数のサービスをまとめて依頼できますか？',
-                a: 'はい、SEO・広告・SNS・コンテンツマーケティングを組み合わせた統合プランもご用意しています。まとめてご依頼いただくと、施策間の連携が強化されより高い効果が期待できます。',
-              },
-              {
-                q: '契約期間の縛りはありますか？',
-                a: '月額サービスは最低3ヶ月からのご契約をお願いしています。SEOや広告運用は効果が出るまで一定期間が必要なためです。詳細はお問い合わせください。',
-              },
-            ].map((item) => (
+            {faqItems.map((item) => (
               <details key={item.q} className="group">
                 <summary className="flex items-center justify-between px-8 py-6 cursor-pointer list-none">
                   <span className="font-medium text-tesla-dark text-sm pr-4">{item.q}</span>
