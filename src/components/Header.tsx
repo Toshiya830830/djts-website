@@ -8,6 +8,7 @@ const navLinks = [
   { href: '/services', label: 'SERVICE', sub: 'サービス' },
   { href: '/blog',     label: 'BLOG',    sub: 'ブログ' },
   { href: '/about',    label: 'ABOUT',   sub: '会社概要' },
+  { href: '/pricing',  label: 'PRICE',   sub: '料金' },
   { href: '/contact',  label: 'CONTACT', sub: 'お問い合わせ' },
 ]
 
