@@ -222,6 +222,55 @@ export default function PricingPage() {
         </section>
       ))}
 
+      {/* FAQ */}
+      <section className="bg-tesla-light py-28 px-6 border-t border-tesla-border">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-3xl font-bold text-tesla-dark text-center mb-12 tracking-tight">よくある質問</h2>
+          <div className="divide-y divide-tesla-border border border-tesla-border rounded-2xl bg-white overflow-hidden">
+            {[
+              {
+                q: 'SEO対策の効果が出るまでどのくらいかかりますか？',
+                a: '一般的に3〜6ヶ月が目安です。サイトの状態や競合状況によって異なりますが、継続的な施策により長期的な流入増加が期待できます。',
+              },
+              {
+                q: 'SEOのプランはどれを選べばいいですか？',
+                a: '初めての方はスタンダードプラン（¥100,000/月）がおすすめです。キーワード15個・月2回のMTGで本格的な対策が始められます。',
+              },
+              {
+                q: 'Web広告の最低予算はありますか？',
+                a: '広告費は月額10万円から対応しています。運用手数料は広告費の20%（最低¥30,000/月）です。業種や目標によって最適な予算をご提案しますので、まずはご相談ください。',
+              },
+              {
+                q: 'WEBサイト制作のシンプルとカスタムの違いは何ですか？',
+                a: 'シンプルプラン（¥200,000〜）はテンプレートをベースに短期間で制作します。カスタムプラン（¥500,000〜）はゼロからオリジナルデザインで制作し、機能や演出も自由に設計できます。',
+              },
+              {
+                q: '動画編集・DX支援・AIツール導入支援の料金はなぜ「要お問い合わせ」なのですか？',
+                a: 'これらのサービスは案件の規模・内容によって工数が大きく異なるため、一律の料金設定が難しい状況です。まずはご要望をお聞きしたうえで、最適なプランをご提案します。',
+              },
+              {
+                q: '複数のサービスをまとめて依頼できますか？',
+                a: 'はい、SEO・広告・SNS・コンテンツマーケティングを組み合わせた統合プランもご用意しています。まとめてご依頼いただくと、施策間の連携が強化されより高い効果が期待できます。',
+              },
+              {
+                q: '契約期間の縛りはありますか？',
+                a: '月額サービスは最低3ヶ月からのご契約をお願いしています。SEOや広告運用は効果が出るまで一定期間が必要なためです。詳細はお問い合わせください。',
+              },
+            ].map((item) => (
+              <details key={item.q} className="group">
+                <summary className="flex items-center justify-between px-8 py-6 cursor-pointer list-none">
+                  <span className="font-medium text-tesla-dark text-sm pr-4">{item.q}</span>
+                  <svg className="w-4 h-4 text-tesla-mid flex-shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </summary>
+                <p className="px-8 pb-6 text-tesla-mid text-sm font-light leading-relaxed">{item.a}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="h-[60vh] flex flex-col items-center justify-center bg-tesla-dark text-center px-6 border-t border-white/10">
         <h2 className="text-4xl sm:text-5xl font-bold text-white tracking-tight mb-6">
