@@ -63,7 +63,7 @@ const otherServices = [
       { label: '月額プラン', value: '¥50,000/月〜（税込）' },
       { label: '含まれる内容', value: '投稿作成・アカウント運用・月次レポート' },
     ],
-    note: '※運用チャネル数・投稿頻度により異なります。詳細はお問い合わせください。\n※最低契約期間：3ヶ月',
+    note: '※運用チャネル数・投稿頻度により異なります。詳細はお問い合わせください。',
   },
   {
     id: 'content',
@@ -74,7 +74,7 @@ const otherServices = [
       { label: '記事単体制作', value: '¥20,000〜（税込）/ 1本' },
       { label: '月額プラン', value: '¥50,000〜/月（税込・4本/月・SEO最適化込み）' },
     ],
-    note: '※文字数・専門性・リサーチ範囲により変動します。\n※最低契約期間：3ヶ月',
+    note: '※文字数・専門性・リサーチ範囲により変動します。',
   },
   {
     id: 'web',
@@ -229,7 +229,6 @@ export default function PricingPage() {
               </div>
             ))}
           </div>
-          <p className="mt-4 text-xs font-light text-tesla-mid">※最低契約期間：3ヶ月</p>
         </div>
       </section>
 
